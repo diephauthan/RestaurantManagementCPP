@@ -20,3 +20,7 @@ int Dish::GetPrice() {
 int Dish::getDishID() {
 	return ID;
 }
+
+void Dish::SetDishID(int _ID) {
+	ID = _ID;
+}

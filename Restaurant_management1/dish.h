@@ -19,10 +19,10 @@ private:
 	int ID;
 
 public:
-	Dish() : Name(), Price() {
+	Dish() : Name(""), Price(0), ID() {
 		static int _ID = 101;
 		ID = _ID;
-		ID++;
+		_ID++;
 	}
 
 	void SetName(string _name);
@@ -32,6 +32,8 @@ public:
 	int GetPrice();
 
 	int getDishID();
+	void SetDishID(int _ID);
+
 };
 
 typedef struct {

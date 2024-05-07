@@ -3,8 +3,36 @@
   "WorkspaceRootPath": "D:\\cpp\\Restaurant_management1\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{CF3EE223-DA56-4106-A5B9-D1787D3BA387}|Restaurant_management1\\Restaurant_management1.vcxproj|D:\\cpp\\Restaurant_management1\\Restaurant_management1\\table.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CF3EE223-DA56-4106-A5B9-D1787D3BA387}|Restaurant_management1\\Restaurant_management1.vcxproj|solutionrelative:Restaurant_management1\\table.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF3EE223-DA56-4106-A5B9-D1787D3BA387}|Restaurant_management1\\Restaurant_management1.vcxproj|D:\\cpp\\Restaurant_management1\\Restaurant_management1\\staff.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CF3EE223-DA56-4106-A5B9-D1787D3BA387}|Restaurant_management1\\Restaurant_management1.vcxproj|solutionrelative:Restaurant_management1\\staff.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CF3EE223-DA56-4106-A5B9-D1787D3BA387}|Restaurant_management1\\Restaurant_management1.vcxproj|D:\\cpp\\Restaurant_management1\\Restaurant_management1\\menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{CF3EE223-DA56-4106-A5B9-D1787D3BA387}|Restaurant_management1\\Restaurant_management1.vcxproj|solutionrelative:Restaurant_management1\\menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF3EE223-DA56-4106-A5B9-D1787D3BA387}|Restaurant_management1\\Restaurant_management1.vcxproj|D:\\cpp\\Restaurant_management1\\Restaurant_management1\\manager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CF3EE223-DA56-4106-A5B9-D1787D3BA387}|Restaurant_management1\\Restaurant_management1.vcxproj|solutionrelative:Restaurant_management1\\manager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF3EE223-DA56-4106-A5B9-D1787D3BA387}|Restaurant_management1\\Restaurant_management1.vcxproj|D:\\cpp\\Restaurant_management1\\Restaurant_management1\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CF3EE223-DA56-4106-A5B9-D1787D3BA387}|Restaurant_management1\\Restaurant_management1.vcxproj|solutionrelative:Restaurant_management1\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF3EE223-DA56-4106-A5B9-D1787D3BA387}|Restaurant_management1\\Restaurant_management1.vcxproj|D:\\cpp\\Restaurant_management1\\Restaurant_management1\\dish.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CF3EE223-DA56-4106-A5B9-D1787D3BA387}|Restaurant_management1\\Restaurant_management1.vcxproj|solutionrelative:Restaurant_management1\\dish.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF3EE223-DA56-4106-A5B9-D1787D3BA387}|Restaurant_management1\\Restaurant_management1.vcxproj|D:\\cpp\\Restaurant_management1\\Restaurant_management1\\table.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CF3EE223-DA56-4106-A5B9-D1787D3BA387}|Restaurant_management1\\Restaurant_management1.vcxproj|solutionrelative:Restaurant_management1\\table.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF3EE223-DA56-4106-A5B9-D1787D3BA387}|Restaurant_management1\\Restaurant_management1.vcxproj|D:\\cpp\\Restaurant_management1\\Restaurant_management1\\staff.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CF3EE223-DA56-4106-A5B9-D1787D3BA387}|Restaurant_management1\\Restaurant_management1.vcxproj|solutionrelative:Restaurant_management1\\staff.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CF3EE223-DA56-4106-A5B9-D1787D3BA387}|Restaurant_management1\\Restaurant_management1.vcxproj|D:\\cpp\\Restaurant_management1\\Restaurant_management1\\menu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -15,8 +43,8 @@
       "RelativeMoniker": "D:0:0:{CF3EE223-DA56-4106-A5B9-D1787D3BA387}|Restaurant_management1\\Restaurant_management1.vcxproj|solutionrelative:Restaurant_management1\\manager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF3EE223-DA56-4106-A5B9-D1787D3BA387}|Restaurant_management1\\Restaurant_management1.vcxproj|D:\\cpp\\Restaurant_management1\\Restaurant_management1\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{CF3EE223-DA56-4106-A5B9-D1787D3BA387}|Restaurant_management1\\Restaurant_management1.vcxproj|solutionrelative:Restaurant_management1\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{CF3EE223-DA56-4106-A5B9-D1787D3BA387}|Restaurant_management1\\Restaurant_management1.vcxproj|D:\\cpp\\Restaurant_management1\\Restaurant_management1\\dish.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CF3EE223-DA56-4106-A5B9-D1787D3BA387}|Restaurant_management1\\Restaurant_management1.vcxproj|solutionrelative:Restaurant_management1\\dish.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,46 +62,59 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "table.cpp",
+              "DocumentMoniker": "D:\\cpp\\Restaurant_management1\\Restaurant_management1\\table.cpp",
+              "RelativeDocumentMoniker": "Restaurant_management1\\table.cpp",
+              "ToolTip": "D:\\cpp\\Restaurant_management1\\Restaurant_management1\\table.cpp",
+              "RelativeToolTip": "Restaurant_management1\\table.cpp",
+              "ViewState": "AQIAABAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-07T06:12:51.216Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "menu.h",
-              "DocumentMoniker": "D:\\cpp\\Restaurant_management1\\Restaurant_management1\\menu.h",
-              "RelativeDocumentMoniker": "Restaurant_management1\\menu.h",
-              "ToolTip": "D:\\cpp\\Restaurant_management1\\Restaurant_management1\\menu.h",
-              "RelativeToolTip": "Restaurant_management1\\menu.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-06T15:46:09.375Z",
+              "Title": "staff.cpp",
+              "DocumentMoniker": "D:\\cpp\\Restaurant_management1\\Restaurant_management1\\staff.cpp",
+              "RelativeDocumentMoniker": "Restaurant_management1\\staff.cpp",
+              "ToolTip": "D:\\cpp\\Restaurant_management1\\Restaurant_management1\\staff.cpp",
+              "RelativeToolTip": "Restaurant_management1\\staff.cpp",
+              "ViewState": "AQIAADMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-07T06:12:46.581Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "manager.h",
-              "DocumentMoniker": "D:\\cpp\\Restaurant_management1\\Restaurant_management1\\manager.h",
-              "RelativeDocumentMoniker": "Restaurant_management1\\manager.h",
-              "ToolTip": "D:\\cpp\\Restaurant_management1\\Restaurant_management1\\manager.h",
-              "RelativeToolTip": "Restaurant_management1\\manager.h",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAACAAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-06T15:20:05.572Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "menu.cpp",
               "DocumentMoniker": "D:\\cpp\\Restaurant_management1\\Restaurant_management1\\menu.cpp",
               "RelativeDocumentMoniker": "Restaurant_management1\\menu.cpp",
               "ToolTip": "D:\\cpp\\Restaurant_management1\\Restaurant_management1\\menu.cpp",
               "RelativeToolTip": "Restaurant_management1\\menu.cpp",
-              "ViewState": "AQIAACcAAAAAAAAAAAAAAB4AAAAOAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-06T14:10:06.956Z",
+              "WhenOpened": "2024-05-07T06:12:45.512Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "manager.cpp",
+              "DocumentMoniker": "D:\\cpp\\Restaurant_management1\\Restaurant_management1\\manager.cpp",
+              "RelativeDocumentMoniker": "Restaurant_management1\\manager.cpp",
+              "ToolTip": "D:\\cpp\\Restaurant_management1\\Restaurant_management1\\manager.cpp",
+              "RelativeToolTip": "Restaurant_management1\\manager.cpp",
+              "ViewState": "AQIAAHIAAAAAAAAAAAAAAGUAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-06T16:19:05.962Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "main.cpp",
               "DocumentMoniker": "D:\\cpp\\Restaurant_management1\\Restaurant_management1\\main.cpp",
               "RelativeDocumentMoniker": "Restaurant_management1\\main.cpp",
@@ -81,7 +122,85 @@
               "RelativeToolTip": "Restaurant_management1\\main.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-06T14:41:26.943Z",
+              "WhenOpened": "2024-05-07T06:12:32.606Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "dish.cpp",
+              "DocumentMoniker": "D:\\cpp\\Restaurant_management1\\Restaurant_management1\\dish.cpp",
+              "RelativeDocumentMoniker": "Restaurant_management1\\dish.cpp",
+              "ToolTip": "D:\\cpp\\Restaurant_management1\\Restaurant_management1\\dish.cpp",
+              "RelativeToolTip": "Restaurant_management1\\dish.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-07T06:12:24.012Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "table.h",
+              "DocumentMoniker": "D:\\cpp\\Restaurant_management1\\Restaurant_management1\\table.h",
+              "RelativeDocumentMoniker": "Restaurant_management1\\table.h",
+              "ToolTip": "D:\\cpp\\Restaurant_management1\\Restaurant_management1\\table.h",
+              "RelativeToolTip": "Restaurant_management1\\table.h",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-05-07T06:12:16.233Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "staff.h",
+              "DocumentMoniker": "D:\\cpp\\Restaurant_management1\\Restaurant_management1\\staff.h",
+              "RelativeDocumentMoniker": "Restaurant_management1\\staff.h",
+              "ToolTip": "D:\\cpp\\Restaurant_management1\\Restaurant_management1\\staff.h",
+              "RelativeToolTip": "Restaurant_management1\\staff.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-05-07T06:12:10.435Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "menu.h",
+              "DocumentMoniker": "D:\\cpp\\Restaurant_management1\\Restaurant_management1\\menu.h",
+              "RelativeDocumentMoniker": "Restaurant_management1\\menu.h",
+              "ToolTip": "D:\\cpp\\Restaurant_management1\\Restaurant_management1\\menu.h",
+              "RelativeToolTip": "Restaurant_management1\\menu.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-05-07T06:12:06.725Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "manager.h",
+              "DocumentMoniker": "D:\\cpp\\Restaurant_management1\\Restaurant_management1\\manager.h",
+              "RelativeDocumentMoniker": "Restaurant_management1\\manager.h",
+              "ToolTip": "D:\\cpp\\Restaurant_management1\\Restaurant_management1\\manager.h",
+              "RelativeToolTip": "Restaurant_management1\\manager.h",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAACUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-05-07T06:11:56.921Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "dish.h",
+              "DocumentMoniker": "D:\\cpp\\Restaurant_management1\\Restaurant_management1\\dish.h",
+              "RelativeDocumentMoniker": "Restaurant_management1\\dish.h",
+              "ToolTip": "D:\\cpp\\Restaurant_management1\\Restaurant_management1\\dish.h",
+              "RelativeToolTip": "Restaurant_management1\\dish.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-05-07T06:11:52.88Z",
               "EditorCaption": ""
             }
           ]

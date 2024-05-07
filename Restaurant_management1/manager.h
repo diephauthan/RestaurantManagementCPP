@@ -30,13 +30,15 @@ public:
 
 	void SetTableNumber(int number); // số bàn nhà hàng có thể phục vụ
 
-	void NewDish(Dish dish); // thêm món mới
+	void NewDish(); // thêm món mới
 
 	void EditDish(list<Dish>& menu);
 
 	void DeleteDish(list<Dish>& menu);
 
-	void DishList(list<Dish> menu);
+	//void DishList(list<Dish>& menu);
+
+	void showMenu();
 };
 
 #endif // !_MANAGER_Hh> menu);

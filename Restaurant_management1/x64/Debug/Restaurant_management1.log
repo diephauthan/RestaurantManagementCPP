@@ -1,4 +1,8 @@
-﻿  main.cpp
+﻿  dish.cpp
+  main.cpp
+  manager.cpp
   menu.cpp
+  staff.cpp
+  table.cpp
   Generating Code...
   Restaurant_management1.vcxproj -> D:\cpp\Restaurant_management1\x64\Debug\Restaurant_management1.exe

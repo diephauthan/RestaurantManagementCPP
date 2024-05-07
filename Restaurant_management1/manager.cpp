@@ -24,12 +24,13 @@ void Manager::SetTableNumber(int number) {
 * Input:   dish
 * Output:  return: none
 */
-void Manager::NewDish(Dish dish) {
+void Manager::NewDish() {
+    Dish newdish;
     cout << "\t\t\tEnter the new dish name: ";
     cin.ignore();
     string name_;
     cin >> name_;
-    dish.SetName(name_);
+    newdish.SetName(name_);
 
     int price_;
     bool ValidInput = false;
@@ -49,9 +50,9 @@ void Manager::NewDish(Dish dish) {
             ValidInput = true;
         }
     } while (!ValidInput);
-    dish.SetPrice(price_);
+    newdish.SetPrice(price_);
 
-    menu.push_back(dish);
+    menu.push_back(newdish);
 }
 
 /*
@@ -82,21 +83,37 @@ void Manager::DeleteDish(list<Dish>& menu) {
 * Input:	menu
 * Output:	none
 */
-void Manager::DishList(list<Dish> menu) {
+//void Manager::DishList(list<Dish>& menu) {
+//    if (menu.empty()) {
+//        cout << "The menu is empty." << endl;
+//        return;
+//    }
+//    cout << "List of The Dish" << endl;
+//    cout << "Ordinals| ID\t\t| Dish Name\t\t| Price\t\t" << endl;
+//
+//    int stt = 1;
+//    for (list<Dish>::iterator it = menu.begin(); it != menu.end(); ++it) {
+//        cout << setw(3) << left << stt++ << "\t|  ";
+//        cout << setw(5) << left << it->getDishID() << "\t|  ";
+//        cout << setw(15) << left << it->GetName() << "\t|  ";
+//        cout << setw(5) << left << it->GetPrice() << "\t|  ";
+//        cout << endl;
+//    }
+//}
+
+void Manager::showMenu() {
+    int count = 0;
     if (menu.empty()) {
+        cout << endl;
         cout << "The menu is empty." << endl;
         return;
     }
-    cout << "List of The Dish" << endl;
-    cout << "Ordinals| ID\t\t| Dish Name\t\t| Price\t\t" << endl;
-
-    int stt = 1;
-    for (list<Dish>::iterator it = menu.begin(); it != menu.end(); ++it) {
-        cout << setw(3) << left << stt++ << "\t|  ";
-        cout << setw(5) << left << it->getDishID() << "\t|  ";
-        cout << setw(15) << left << it->GetName() << "\t|  ";
-        cout << setw(5) << left << it->GetPrice() << "\t|  ";
-        cout << endl;
+    cout << "\n-------------------------------------------------------------------------------------------------------" << endl;
+    cout << "\t\t\t\t\tMENU" << endl << endl;
+    cout << "No" << "\t\tID" << "\t\tName" << "\t\tPrice" << endl;
+    for (auto i : menu) {
+        count++;
+        cout << count << "\t\t" << i.getDishID() << "\t\t" << i.GetName() << "\t\t" << i.GetPrice() << endl;
     }
 }
 
@@ -107,7 +124,7 @@ void Manager::DishList(list<Dish> menu) {
 * Output:  return: none
 */
 void Manager::EditDish(list<Dish>& menu) {
-    DishList(menu);
+    showMenu();
     int ID_Input;
     cout << "Enter the ID of the dish you want to modify: ";
     cin >> ID_Input;
