@@ -123,32 +123,100 @@ void Manager::showMenu() {
 * Input:   dish
 * Output:  return: none
 */
-void Manager::EditDish(list<Dish>& menu) {
-    showMenu();
-    int ID_Input;
-    cout << "Enter the ID of the dish you want to modify: ";
-    cin >> ID_Input;
+//void Manager::EditDish(list<Dish>& menu) {
+//    showMenu();
+//    int ID_Input;
+//    cout << "Enter the ID of the dish you want to modify: ";
+//    cin >> ID_Input;
+//
+//    for (list<Dish>::iterator it = menu.begin(); it != menu.end(); ++it) {
+//        if (it->getDishID() == ID_Input) {
+//            cout << " Dish found.Current information : " << endl;
+//            cout << "ID" << "\t\t\tName" << "\t\t\tPrice" << endl;
+//            cout << it->getDishID() << "\t\t\t" << it->GetName() << "\t\t\t" << it->GetPrice();
+//            cout << "\n-------------------------------------------------------------------------------------------------------" << endl;
+//
+//            cout << "Enter the new price: " << endl;
+//            int NewPrice;
+//            cin >> NewPrice;
+//            while (NewPrice < 0 || NewPrice > 100000000) {
+//                cout << "Invalid choice! Please try again: ";
+//                cin >> NewPrice;
+//            }
+//
+//            it->SetPrice(NewPrice);
+//            cout << "The price updated successfully!" << endl;
+//            cout << endl;
+//            return;
+//        }
+//    }
 
-    for (list<Dish>::iterator it = menu.begin(); it != menu.end(); ++it) {
-        if (it->getDishID() == ID_Input) {
-            cout << " Dish found.Current information : " << endl;
-            cout << "ID" << "\t\t\tName" << "\t\t\tPrice" << endl;
-            cout << it->getDishID() << "\t\t\t" << it->GetName() << "\t\t\t" << it->GetPrice();
-            cout << "\n-------------------------------------------------------------------------------------------------------" << endl;
 
-            cout << "Enter the new price: " << endl;
-            int NewPrice;
-            cin >> NewPrice;
-            while (NewPrice < 0 || NewPrice > 100000000) {
-                cout << "Invalid choice! Please try again: ";
-                cin >> NewPrice;
+    //void Manager::EditDish(list<Dish>&menu) {
+    //    bool found = false;
+    //    showMenu();
+    //    int ID_Input;
+    //    cout << "Enter the ID of the dish you want to modify: ";
+    //    cin >> ID_Input;
+
+    //    for (list<Dish>::iterator it = menu.begin(); it != menu.end(); ++it) {
+    //        if (it->getDishID() == ID_Input) {
+    //            found = true;
+    //            cout << " Dish found.Current information : " << endl;
+    //            cout << "ID" << "\t\t\tName" << "\t\t\tPrice" << endl;
+    //            cout << it->getDishID() << "\t\t\t" << it->GetName() << "\t\t\t" << it->GetPrice();
+    //            cout << "\n-------------------------------------------------------------------------------------------------------" << endl;
+
+    //            cout << "Enter the new price: " << endl;
+    //            int NewPrice;
+    //            cin >> NewPrice;
+    //            while (NewPrice < 0 || NewPrice > 100000000) {
+    //                cout << "Invalid choice! Please try again: ";
+    //                cin >> NewPrice;
+    //            }
+
+    //            it->SetPrice(NewPrice);
+    //            cout << "The price updated successfully!" << endl;
+    //            cout << endl;
+    //            return;
+    //        }
+    //    }
+
+    //    if (!found) {
+    //        cout << "No Dish Found in the Menu" << endl;
+    //    }
+
+    //}
+
+    void Manager::editDish() {
+        bool found = false;
+        showMenu();
+        int ID_Input;
+        cout << "Enter the ID of the dish you want to modify: ";
+        cin >> ID_Input;
+        for (auto& i : menu) {
+            if (i.getDishID() == ID_Input) {
+                found = true;
+                cout << "\n-------------------------------------------------------------------------------------------------------" << endl;
+                cout << "\t\t\t\t\tData is founded " << endl << endl;
+                cout << "ID" << "\t\t\tName" << "\t\t\tPrice" << endl;
+                cout << i.getDishID() << "\t\t\t" << i.GetName() << "\t\t\t" << i.GetPrice();
+                cout << "\n-------------------------------------------------------------------------------------------------------" << endl;
+
+                cout << "\n\t\t\tPlease enter Price of dish you want to change: " << endl;
+                int _price = 0; 
+                cin >> _price;
+                while (_price < 0 || _price > 100000000) {
+                    cout << "Invalid choice! Please try again: ";
+                    cin >> _price;
+                }
+                i.SetPrice(_price);
+                cout << "The price updated successfully!" << endl;
+                cout << endl;
+                return;
             }
-
-            it->SetPrice(NewPrice);
-            cout << "The price updated successfully!" << endl;
-            cout << endl;
-            return;
+        }
+        if (!found) {
+            cout << "No Dish Found in the Menu" << endl;
         }
     }
-
-}

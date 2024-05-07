@@ -92,10 +92,12 @@ void menuManager(Database& database) {
                     database.staffaData.getNumTable(database.numTable);
 
                     cout << "1. Back to Set up Table" << endl;
-                    cout << "0. Back to Menu" << endl;
+                    cout << "0. Back to Manager Menu" << endl;
                     cout << "Enter The Choice: ";
-                    while (!(cin >> choice)) {
+                    while (!(cin >> choice) || choice != 0 && choice != 1) {
                         cout << endl;
+                        cout << "Invalid choice. Please try again." << endl;
+                        cout << "Enter Your Choice: ";
                         handleInvalidInput();
                     }
 
@@ -105,10 +107,7 @@ void menuManager(Database& database) {
                     else if (choice == 0) {
                         ContinueSetup = false;
                     }
-                    else {
-                        cout << "Invalid choice. Please try again." << endl;
-                        ContinueSetup = false;
-                    }
+   
                 } while (ContinueSetup);
 
                 break;
@@ -116,17 +115,18 @@ void menuManager(Database& database) {
 
             case 2: {
                 bool ContinueAdd = false;
-
                 do
                 {
                     cout << "\n-------------------------------------------------------------------------------------------------------" << endl;
                     cout << "----------------------------------------- Adding The New Dish -------------------------------------------" << endl;
                     database.managerData.NewDish();
-                    cout << "1. Back to Set up Table" << endl;
-                    cout << "0. Back to Menu" << endl;
+                    cout << "1. Back to Adding The New Dish" << endl;
+                    cout << "0. Back to Manager Menu" << endl;
                     cout << "Enter The Choice: ";
-                    while (!(cin >> choice)) {
+                    while (!(cin >> choice) || choice != 0 && choice != 1) {
                         cout << endl;
+                        cout << "Invalid choice. Please try again." << endl;
+                        cout << "Enter Your Choice: ";
                         handleInvalidInput();
                     }
 
@@ -136,14 +136,39 @@ void menuManager(Database& database) {
                     else if (choice == 0) {
                         ContinueAdd = false;
                     }
-                    else {
-                        cout << "Invalid choice. Please try again." << endl;
-                        ContinueAdd = false;
-                    }
                 } while (ContinueAdd);
 
                 break;
             }
+            
+            case 3:
+            {
+                bool ContinueEdit = false;
+
+                do
+                {
+                    database.managerData.editDish();
+                    cout << endl;
+                    cout << "1. Back to Edit Dish" << endl;
+                    cout << "0. Back to Manager Menu" << endl;
+                    cin >> choice;
+                    while (!(cin >> choice) || choice != 0 && choice != 1) {
+                        cout << endl;
+                        cout << "Invalid choice. Please try again." << endl;
+                        cout << "Enter Your Choice: ";
+                        handleInvalidInput();
+                    }
+
+                    if (choice == 1) {
+                        ContinueEdit = true;
+                    }
+                    else if (choice == 0) {
+                        ContinueEdit = false;
+                    }
+                } while (ContinueEdit);
+                break;
+            }
+
 
             case 5: {
                 bool ValidInput = false;
@@ -153,20 +178,19 @@ void menuManager(Database& database) {
                     database.managerData.showMenu();
                     cout << endl;
 
-                    cout << "0. Back to Main Menu" << endl;
+                    cout << "0. Back to Manager Menu" << endl;
                     cout << "Enter Your Choice: ";
                     cin >> choice;
-
-                    if (cin.fail() || (choice != 0)) {
-                        cout << "Invalid input. Please enter a valid choice (0 to return to the Main Menu)." << endl;
+                    while (!(cin >> choice) || choice != 0) {
+                        cout << endl;
+                        cout << "Invalid choice. Please try again." << endl;
+                        cout << "Enter Your Choice: ";
                         handleInvalidInput();
                     }
-                    else {
-                        ValidInput = true;
+                    if (choice == 0) {
+                        ValidInput = false;
                     }
-
-                } while (!ValidInput);
-
+                } while (ValidInput);
                 break;
             }
 

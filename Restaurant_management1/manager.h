@@ -32,11 +32,9 @@ public:
 
 	void NewDish(); // thêm món mới
 
-	void EditDish(list<Dish>& menu);
+	void editDish();
 
 	void DeleteDish(list<Dish>& menu);
-
-	//void DishList(list<Dish>& menu);
 
 	void showMenu();
 };
