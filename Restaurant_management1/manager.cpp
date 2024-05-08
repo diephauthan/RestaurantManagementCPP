@@ -1,4 +1,4 @@
-/*
+﻿/*
 * File: manager.cpp
 * Author: Hau Than Diep
 * Date: 04/26/2024
@@ -7,6 +7,10 @@
 
 #include"Manager.h"
 #include<iomanip>
+
+list <Dish> Manager::getMenu() {
+    return menu;
+}
 
 /*
 * Function: SetTable
@@ -56,50 +60,11 @@ void Manager::NewDish() {
 }
 
 /*
-* Function: DeleteDish
-* Description: This function is used for Delete a dish
-* Input:   dish
-* Output:  return: none
-*/
-void Manager::DeleteDish(list<Dish>& menu) {
-    int ID_input;
-    cout << "Enter the ID of the dish you want to delete: ";
-    cin >> ID_input;
-
-    for (list<Dish>::iterator it = menu.begin(); it != menu.end(); ++it) {
-        if (it->getDishID() == ID_input) {
-            it = menu.erase(it);
-            cout << "Dish ID: " << ID_input << " has been deleted sucessfully" << endl;
-            return;
-        }
-    }
-
-    cout << "No Dish with ID " << ID_input << " found in the database" << endl;
-}
-
-/*
-* Function: DishList
+* Function: showmenu
 * Description: This function is used for Display list of dishes
 * Input:	menu
 * Output:	none
 */
-//void Manager::DishList(list<Dish>& menu) {
-//    if (menu.empty()) {
-//        cout << "The menu is empty." << endl;
-//        return;
-//    }
-//    cout << "List of The Dish" << endl;
-//    cout << "Ordinals| ID\t\t| Dish Name\t\t| Price\t\t" << endl;
-//
-//    int stt = 1;
-//    for (list<Dish>::iterator it = menu.begin(); it != menu.end(); ++it) {
-//        cout << setw(3) << left << stt++ << "\t|  ";
-//        cout << setw(5) << left << it->getDishID() << "\t|  ";
-//        cout << setw(15) << left << it->GetName() << "\t|  ";
-//        cout << setw(5) << left << it->GetPrice() << "\t|  ";
-//        cout << endl;
-//    }
-//}
 
 void Manager::showMenu() {
     int count = 0;
@@ -123,91 +88,33 @@ void Manager::showMenu() {
 * Input:   dish
 * Output:  return: none
 */
-//void Manager::EditDish(list<Dish>& menu) {
-//    showMenu();
-//    int ID_Input;
-//    cout << "Enter the ID of the dish you want to modify: ";
-//    cin >> ID_Input;
-//
-//    for (list<Dish>::iterator it = menu.begin(); it != menu.end(); ++it) {
-//        if (it->getDishID() == ID_Input) {
-//            cout << " Dish found.Current information : " << endl;
-//            cout << "ID" << "\t\t\tName" << "\t\t\tPrice" << endl;
-//            cout << it->getDishID() << "\t\t\t" << it->GetName() << "\t\t\t" << it->GetPrice();
-//            cout << "\n-------------------------------------------------------------------------------------------------------" << endl;
-//
-//            cout << "Enter the new price: " << endl;
-//            int NewPrice;
-//            cin >> NewPrice;
-//            while (NewPrice < 0 || NewPrice > 100000000) {
-//                cout << "Invalid choice! Please try again: ";
-//                cin >> NewPrice;
-//            }
-//
-//            it->SetPrice(NewPrice);
-//            cout << "The price updated successfully!" << endl;
-//            cout << endl;
-//            return;
-//        }
-//    }
-
-
-    //void Manager::EditDish(list<Dish>&menu) {
-    //    bool found = false;
-    //    showMenu();
-    //    int ID_Input;
-    //    cout << "Enter the ID of the dish you want to modify: ";
-    //    cin >> ID_Input;
-
-    //    for (list<Dish>::iterator it = menu.begin(); it != menu.end(); ++it) {
-    //        if (it->getDishID() == ID_Input) {
-    //            found = true;
-    //            cout << " Dish found.Current information : " << endl;
-    //            cout << "ID" << "\t\t\tName" << "\t\t\tPrice" << endl;
-    //            cout << it->getDishID() << "\t\t\t" << it->GetName() << "\t\t\t" << it->GetPrice();
-    //            cout << "\n-------------------------------------------------------------------------------------------------------" << endl;
-
-    //            cout << "Enter the new price: " << endl;
-    //            int NewPrice;
-    //            cin >> NewPrice;
-    //            while (NewPrice < 0 || NewPrice > 100000000) {
-    //                cout << "Invalid choice! Please try again: ";
-    //                cin >> NewPrice;
-    //            }
-
-    //            it->SetPrice(NewPrice);
-    //            cout << "The price updated successfully!" << endl;
-    //            cout << endl;
-    //            return;
-    //        }
-    //    }
-
-    //    if (!found) {
-    //        cout << "No Dish Found in the Menu" << endl;
-    //    }
-
-    //}
-
     void Manager::editDish() {
-        bool found = false;
         showMenu();
         int ID_Input;
         cout << "Enter the ID of the dish you want to modify: ";
-        cin >> ID_Input;
+        while (!(cin >> ID_Input)) {
+            cout << endl;
+            cout << "Invalid choice. Please try again." << endl;
+            cout << "Enter ID from Menu: ";
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        }
         for (auto& i : menu) {
             if (i.getDishID() == ID_Input) {
-                found = true;
                 cout << "\n-------------------------------------------------------------------------------------------------------" << endl;
                 cout << "\t\t\t\t\tData is founded " << endl << endl;
                 cout << "ID" << "\t\t\tName" << "\t\t\tPrice" << endl;
                 cout << i.getDishID() << "\t\t\t" << i.GetName() << "\t\t\t" << i.GetPrice();
                 cout << "\n-------------------------------------------------------------------------------------------------------" << endl;
 
-                cout << "\n\t\t\tPlease enter Price of dish you want to change: " << endl;
+                cout << "\n\t\t\tPlease enter Price of dish you want to change: ";
                 int _price = 0; 
                 cin >> _price;
-                while (_price < 0 || _price > 100000000) {
-                    cout << "Invalid choice! Please try again: ";
+                while (cin.fail() ||_price < 0 || _price > 100000000) {
+                    cout << "Invalid choice! Please try again" << endl;
+                    cout << "Please enter Price of dish you want to change: ";
+                    cin.clear();
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
                     cin >> _price;
                 }
                 i.SetPrice(_price);
@@ -216,7 +123,34 @@ void Manager::showMenu() {
                 return;
             }
         }
-        if (!found) {
-            cout << "No Dish Found in the Menu" << endl;
+
+        cout << "No Dish Found in the Menu" << endl;
+    }
+
+/*
+* Function: DeleteDish
+* Description: This function is used for Delete a dish
+* Input:   dish
+* Output:  return: none
+*/
+    void Manager::DeleteDish() {
+        int ID_input;
+        cout << "Enter the ID of the dish you want to delete: ";
+        while (!(cin >> ID_input)) {
+            cout << endl;
+            cout << "Invalid choice. Please try again." << endl;
+            cout << "Enter ID from Menu: ";
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
         }
+
+        for (list<Dish>::iterator it = menu.begin(); it != menu.end(); ++it) {
+            if (it->getDishID() == ID_input) {
+                menu.erase(it);
+                cout << "Dish ID " << ID_input << " has been deleted sucessfully" << endl;
+                return;
+            }
+        }
+
+        cout << "No Dish with ID " << ID_input << " found in the database" << endl;
     }

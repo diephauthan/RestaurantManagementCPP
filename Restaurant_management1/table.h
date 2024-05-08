@@ -26,7 +26,7 @@ private:
 
 public:
 	Table() {
-		static int _TableID = 201;
+		static int _TableID = 1;
 		TableID = _TableID;
 		_TableID++;
 		

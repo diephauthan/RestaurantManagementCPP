@@ -34,9 +34,11 @@ public:
 
 	void editDish();
 
-	void DeleteDish(list<Dish>& menu);
+	void DeleteDish();
 
 	void showMenu();
+
+	list <Dish>getMenu();
 };
 
 #endif // !_MANAGER_Hh> menu);

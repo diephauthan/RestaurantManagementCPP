@@ -22,7 +22,9 @@ void Staff::displayTable() {
 
     cout << "\n Status " << "\t\t";
     for (auto it : tableList) {
-        if (it.GetStatusTable() == Free) cout << "O" << "\t";
+        if (it.GetStatusTable() == Free) {
+            cout << "O" << "\t";
+        }
         else cout << "X" << "\t";
     }
 
@@ -34,16 +36,20 @@ bool Staff::isFull() {
     for (auto it : tableList) {
         if (it.GetStatusTable() == Free) return false;
     }
+    return true;
+}
+
+bool Staff::chooseTable(int _tableID) {
+    for (auto& i : tableList) {
+        if (i.GetTableID() == _tableID && i.GetStatusTable() == Free) {
+            i.SetStatusTable(Booked);
+            return true;
+        }
+    }
     return false;
 }
 
-void Staff::chooseTable(int _tableID) {
-    for (auto& i : tableList) {
-        if (i.GetTableID() == _tableID) {
-            i.SetStatusTable(Booked);
-        }
-    }
-}
+
 
 void Staff::getTableInfo(int _tableID, int type, list <Dish> menu) {
     for (auto& it : tableList) {

@@ -83,10 +83,12 @@ void menuManager(Database& database) {
                     cout << "\n-------------------------------------------------------------------------------------------------------" << endl;
                     cout << "----------------------------------------- Set up table ------------------------------------------------" << endl;
                     cout << "\t\t\tEnter quantity of table you want to set up: ";
-                    cin >> database.numTable;
-                    if (cin.fail() || database.numTable <= 0) {
+                    //cin >> database.numTable;
+                    while (!(cin >> database.numTable) || database.numTable <= 0) {
+                        cout << endl;
+                        cout << "Invalid choice. Please try again." << endl;
+                        cout << "Enter Your Choice: ";
                         handleInvalidInput();
-                        return;
                     }
                     database.managerData.SetTableNumber(database.numTable);
                     database.staffaData.getNumTable(database.numTable);
@@ -109,7 +111,6 @@ void menuManager(Database& database) {
                     }
    
                 } while (ContinueSetup);
-
                 break;
             }
 
@@ -137,7 +138,6 @@ void menuManager(Database& database) {
                         ContinueAdd = false;
                     }
                 } while (ContinueAdd);
-
                 break;
             }
             
@@ -151,7 +151,7 @@ void menuManager(Database& database) {
                     cout << endl;
                     cout << "1. Back to Edit Dish" << endl;
                     cout << "0. Back to Manager Menu" << endl;
-                    cin >> choice;
+                    cout << "Enter The Choice: ";
                     while (!(cin >> choice) || choice != 0 && choice != 1) {
                         cout << endl;
                         cout << "Invalid choice. Please try again." << endl;
@@ -169,6 +169,31 @@ void menuManager(Database& database) {
                 break;
             }
 
+            case 4: {
+                bool ContinueDelete = false;
+                do
+                {
+                    database.managerData.DeleteDish();
+                    cout << endl;
+                    cout << "1. Back to Delete Dish" << endl;
+                    cout << "0. Back to Manager Menu" << endl;
+                    cout << "Enter The Choice: ";
+                    while (!(cin >> choice) || choice != 0 && choice != 1) {
+                        cout << endl;
+                        cout << "Invalid choice. Please try again." << endl;
+                        cout << "Enter Your Choice: ";
+                        handleInvalidInput();
+                    }
+
+                    if (choice == 1) {
+                        ContinueDelete = true;
+                    }
+                    else if (choice == 0) {
+                        ContinueDelete = false;
+                    }
+                } while (ContinueDelete);
+                break;
+            }
 
             case 5: {
                 bool ValidInput = false;
@@ -180,7 +205,6 @@ void menuManager(Database& database) {
 
                     cout << "0. Back to Manager Menu" << endl;
                     cout << "Enter Your Choice: ";
-                    cin >> choice;
                     while (!(cin >> choice) || choice != 0) {
                         cout << endl;
                         cout << "Invalid choice. Please try again." << endl;
@@ -207,5 +231,177 @@ void menuManager(Database& database) {
 
 
 void menuStaff(Database& database) {
+    int choice;
+    bool exit_program = false;
+    do
+    {
+        bool cc = false;
+        do
+        {
 
+            cout << "\t\t\t-----------" << endl;
+            cout << "\t\t\t|  STAFF  |" << endl;
+            cout << "\t\t\t-----------" << endl;
+            cout << "\t\t\t 1. Table Status" << endl;
+            cout << "\t\t\t 2. Service for Table" << endl;
+            cout << "\t\t\t 0. Back to Main Menu" << endl;
+            cout << "\t\t\t............................" << endl;
+            cout << "\t\t\tPlease Enter Your Choice: ";
+            cin >> choice;
+
+            if (cin.fail()) {
+                handleInvalidInput();
+            }
+            else {
+                switch (choice) {
+                case 1: {
+                    system("cls");
+
+                    database.staffaData.displayTable();
+                    cout << endl;
+
+                    if (database.staffaData.isFull()) {
+                        cout << "Sorry. There are no tables available." << endl;
+                        cout << "0. Back to Main Menu" << endl;
+                        cout << "Enter Your Choice: ";
+                        while (!(cin >> choice) || choice != 0) {
+                            cout << endl;
+                            cout << "Invalid choice. Please try again." << endl;
+                            cout << "Enter Your Choice: ";
+                            handleInvalidInput();
+                        }
+                        return mainMenu(database);
+                    }
+                    else {
+                        int _tableID;
+                        bool ValidBook = false;
+                        do
+                        {
+                            cout << "Please choose one of these Table ID: ";
+                            while (!(cin >> _tableID)) {
+                                cout << endl;
+                                cout << "Invalid choice. Please try again." << endl;
+                                cout << "Enter Your Choice: ";
+                                handleInvalidInput();
+                            }
+                            if (database.staffaData.chooseTable(_tableID)) {
+                                cout << "Table " << _tableID << " has been successfully booked." << endl;
+                                ValidBook = true;
+                            }
+                            else {
+                                cout << "Failed to book Table " << _tableID << ". Please choose another table." << endl;
+                                ValidBook = true;
+                            }
+                        } while (!ValidBook);
+
+                    }
+                    break;
+                }
+
+                case 2: {
+                    int _tableID;
+                    bool ValidBook = false;
+                    if (database.staffaData.tableList.empty()) {
+                        return mainMenu(database);
+                    }
+                    else
+                    {
+                        database.staffaData.displayTable();
+                        cout << endl;
+                        cout << "\t\t\tPlease choose one of these Table ID: ";
+                        while (!(cin >> _tableID)) {
+                            cout << endl;
+                            cout << "Invalid choice. Please try again." << endl;
+                            cout << "Enter Your Choice: ";
+                            handleInvalidInput();
+                        }
+                        cout << "\t\t\t-----------" << endl;
+                        cout << "\t\t\t|  STAFF  |" << endl;
+                        cout << "\t\t\t-----------" << endl;
+                        cout << "\t\t\t 1. Order Dish" << endl;
+                        cout << "\t\t\t 2. Cancel Dish" << endl;
+                        cout << "\t\t\t 3. Change Dish" << endl;
+                        cout << "\t\t\t 4. Dish list was ordered" << endl;
+                        cout << "\t\t\t 5. Payment" << endl;
+                        cout << "\t\t\t 0. Back to Staff Menu" << endl;
+                        cout << "\t\t\t............................" << endl;
+                        cout << "\t\t\tPlease Enter Your Choice: ";
+                        cin >> choice;
+                        if (cin.fail()) {
+                            handleInvalidInput();
+                        }
+                        else {
+                            switch (choice) {
+                            case 1: {
+                                bool ContinueOrder = false;
+                                do
+                                {
+                                    cout << "--------------------------------------------- Menu ----------------------------------------------------"<< endl;
+                                    database.managerData.showMenu();
+                                    cout << endl << endl;
+                                    cout << "\n-------------------------------------------------------------------------------------------------------" << endl;
+                                    cout << "----------------------------------------- Add dish ------------------------------------------------" << endl;
+                                    database.staffaData.getTableInfo(_tableID, 1, database.managerData.getMenu());
+                                    cout << "1. Back to Add dish" << endl;
+                                    cout << "0. Back to Staff Menu" << endl;
+                                    cout << "Enter The Choice: ";
+                                    while (!(cin >> choice) || choice != 0 && choice != 1) {
+                                        cout << endl;
+                                        cout << "Invalid choice. Please try again." << endl;
+                                        cout << "Enter Your Choice: ";
+                                        handleInvalidInput();
+                                    }
+
+                                    if (choice == 1) {
+                                        ContinueOrder = true;
+                                    }
+                                    else if (choice == 0) {
+                                        ContinueOrder = false;
+                                    }
+                                } while (ContinueOrder);
+                                break;
+                            }
+
+                            case 2: {
+
+                                break;
+                            }
+
+                            case 3: {
+
+                                break;
+                            }
+
+                            case 4: {
+
+                                break;
+                            }
+
+                            case 5: {
+
+                                break;
+                            }
+
+                            case 0:
+                                cc = true;
+                                break;
+
+                            default:
+                                break;
+                            }
+                        
+                        }
+                    }
+                    break;
+                }
+                case 0:
+                    return mainMenu(database);
+                    break;
+
+                default:
+                    break;
+                }
+            }
+        } while (cc);
+        } while (!exit_program);
 }
