@@ -10,6 +10,7 @@
 
 #include"dish.h"
 #include<list>
+#include"manager.h"
 using namespace std;
 
 typedef enum  {
@@ -46,7 +47,7 @@ public:
 
 	void CancelDish(); 
 
-	void EditDish();
+	void EditDish(list <Dish> &menu);
 
 	void GetOrderList();
 

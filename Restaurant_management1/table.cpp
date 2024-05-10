@@ -1,6 +1,8 @@
 ﻿#include"table.h"
 #include<iomanip>
 
+extern void handleInvalidInput();
+
 void Table::ResetTable() {
     OrderList.clear();
     cout << "Table reset successful." << endl;
@@ -25,18 +27,28 @@ int Table::GetTableID() {
 void Table::OrderDish(list <Dish> menu) {
     Order neworder;
     bool Found = false;
+    int quantity = 0;
 
     int ID_Input;
     cout << "Enter ID of the dish: ";
     cin >> ID_Input;
+    while ((!cin >> ID_Input)) {
+        cout << endl;
+        handleInvalidInput();
+    }
 
     for (list<Dish>::iterator it = menu.begin(); it != menu.end(); ++it) {
         if (it->getDishID() == ID_Input) {
             cout << "Dish Found." << endl;
             neworder.dish = *it;
             cout << "Enter quantity of dish you want: ";
-            int quantity;
             cin >> quantity;
+            while ((!cin >> quantity)) {
+                cout << endl;
+                cout << "Invalid choice. Please try again." << endl;
+                cout << "Enter Your Choice: ";
+                handleInvalidInput();
+            }
             neworder.num = quantity;
 
             OrderList.push_back(neworder);
@@ -53,6 +65,18 @@ void Table::OrderDish(list <Dish> menu) {
 void Table::CancelDish() {
     int ID_Input;
     int quantity;
+    int choice;
+    if (OrderList.empty()) {
+        cout << "Order List is empty. Press 0 to continue: ";
+        cin >> choice;
+        while ((!cin >> choice) || choice != 0) {
+            cout << endl;
+            cout << "Invalid choice. Please try again." << endl;
+            cout << "Enter Your Choice: ";
+            handleInvalidInput();
+        }
+        return;
+    }
     cout << "Enter ID of the dish: ";
     cin >> ID_Input;
 
@@ -63,6 +87,12 @@ void Table::CancelDish() {
             cout << "Dish Found." << endl;
             cout << "Enter quantity of dish you want to cancel: ";
             cin >> quantity;
+            while ((!cin >> quantity)) {
+                cout << endl;
+                cout << "Invalid choice. Please try again." << endl;
+                cout << "Enter Your Choice: ";
+                handleInvalidInput();
+            }
 
             if (quantity >= it->num) {
                 cout << "Cancelled all " << it->dish.GetName() << " from the order." << endl;
@@ -81,21 +111,23 @@ void Table::CancelDish() {
     }
 }
 
-void Table::EditDish() {
+void Table::EditDish(list<Dish>&menu) {
     int ID_Input;
     cout << "Enter ID of the dish: ";
     cin >> ID_Input;
 
     bool found = false;
 
-    for (list<Order>::iterator it = OrderList.begin(); it != OrderList.end(); ++it) {
+    for (list<Order>::iterator it = OrderList.begin(); it != OrderList.end();) {
         if (it->dish.getDishID() == ID_Input) {
             found = true;
             cout << "Dish Found." << endl;
 
             cout << "Cancelled all " << it->dish.GetName() << " from the order." << endl;
-            OrderList.erase(it);
-            return;
+            it = OrderList.erase(it);
+        }
+        else {
+            ++it; // Di chuyển con trỏ đến phần tử tiếp theo nếu không tìm thấy
         }
     }
 
@@ -103,7 +135,10 @@ void Table::EditDish() {
         cout << "No Dish Found in the current order." << endl;
     }
 
-    list<Dish> menu; 
+    // Giả sử danh sách menu đã được cung cấp từ nơi khác
+
+    cout << "Enter ID of the dish: ";
+    cin >> ID_Input;
     for (list<Dish>::iterator it = menu.begin(); it != menu.end(); ++it) {
         if (it->getDishID() == ID_Input) {
             cout << "Dish Found." << endl;
@@ -124,6 +159,7 @@ void Table::EditDish() {
         cout << "No Dish Found in the menu. Please try again." << endl;
     }
 }
+
 
 void Table::GetOrderList(){
     if (OrderList.empty()) {
@@ -160,7 +196,7 @@ void Table::GetBill() {
     do {
         cout << "\n\n\t\t\t1. Pay away" << endl;
         cout << "\t\t\t2. Turn back" << endl;
-        cout << "\t\t\tPlease Enter Your Choice: " << endl;
+        cout << "\t\t\tPlease Enter Your Choice: ";
         cin >> ans;
     } while (ans != 1);
 

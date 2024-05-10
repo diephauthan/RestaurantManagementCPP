@@ -62,7 +62,7 @@ void Staff::getTableInfo(int _tableID, int type, list <Dish> menu) {
                 it.CancelDish();
                 break;
             case 3: // thay đổi
-                it.EditDish();
+                it.EditDish(menu);
                 break;
             case 4: // in ra danh sách 
                 it.GetOrderList();
